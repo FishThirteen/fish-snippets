@@ -1,0 +1,15 @@
+snippet cclass "create class" b
+using System;
+using System.Collections;
+
+namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buffer.name))`}
+{
+	public class `!p snip.rv = snip.basename`
+	{
+		$0
+	}
+}
+endsnippet
+
+
+
