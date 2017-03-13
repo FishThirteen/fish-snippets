@@ -11,3 +11,20 @@ namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buf
 }
 endsnippet
 
+
+snippet ccontroller "create mvc controller" b
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buffer.name))`}
+{
+	public class `!p snip.rv = snip.basename` : Controller
+	{
+		$0
+	}
+}
+endsnippet
+
