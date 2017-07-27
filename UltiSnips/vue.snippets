@@ -1,0 +1,38 @@
+global !p
+def convert_camelcase_to_sep(src, sep):
+    restr = r'\1' + sep + r'\2'
+    s1 = re.sub('(.)([A-Z][a-z]+)', restr, src)
+    return re.sub('([a-z0-9])([A-Z])', restr, s1).lower()
+
+def convert_camelcase_to_snakecase(src):
+    return convert_camelcase_to_sep(src, '-')
+endglobal
+
+
+snippet ccvue "create vue file" b
+<template>
+<div>
+  $0
+</div>
+</template>
+<style scoped>
+</style>
+<script>
+export default {
+  name: '${1:`!p snip.rv = convert_camelcase_to_snakecase(snip.basename)`}',
+  asyncData ({store, route}) {
+  },
+  data() {
+    return {}
+  },
+  components: {
+  },
+  computed: {
+  },
+  methods: {
+  }
+}
+</script>
+endsnippet
+
+
