@@ -1,0 +1,7 @@
+global !p
+from fish.fish_snippets_helper import get_directory_name_from_buffer
+endglobal
+
+snippet "([0-9]*)dir" "ndir" wr
+`!p snip.rv = get_directory_name_from_buffer(match.group(1))`
+endsnippet
