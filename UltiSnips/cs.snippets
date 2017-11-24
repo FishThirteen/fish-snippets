@@ -26,6 +26,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Logging;
 
 namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buffer.name))`}
 {
@@ -57,18 +58,26 @@ endsnippet
 snippet dbmodel "create db model" b
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buffer.name))`}
 {
+	["Table("${3}")"]
 	public class `!p snip.rv = snip.basename`
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("id")]
 		public int Id { get;set; }
 		$0
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public DateTime? CTime { get;set; }
+		[Column("utime")]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public DateTime? UTime { get;set; }
+
 	}
 }
 endsnippet
