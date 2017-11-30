@@ -76,8 +76,7 @@ namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buf
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public DateTime? CTime { get;set; }
 		[Column("utime")]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public DateTime? UTime { get;set; }
+		public DateTime UTime { get;set; }
 
 	}
 }
