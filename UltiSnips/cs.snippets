@@ -65,13 +65,14 @@ using System.Threading.Tasks;
 
 namespace ${2}${1:`!p snip.rv = os.path.basename(os.path.dirname(vim.current.buffer.name))`}
 {
-	["Table("${3}")"]
+	[Table("${3}")]
 	public class `!p snip.rv = snip.basename`
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[Column("id")]
 		public int Id { get;set; }
 		$0
+		[Column("ctime")]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public DateTime? CTime { get;set; }
 		[Column("utime")]
@@ -110,5 +111,9 @@ endsnippet
 
 snippet prop "create default propery" w
 { get;set; }
+endsnippet
+
+snippet Column "column mapping"
+[Column("$0")]
 endsnippet
 
